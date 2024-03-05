@@ -1,0 +1,8 @@
+<ul *ngFor="let student of students|async">
+    <li><a [routerLink]="['./',student.id]"> {{student.name}}</a></li>
+
+
+</ul>
+<router-outlet></router-outlet>
+
+<app-student-create ></app-student-create>

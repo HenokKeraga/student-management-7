@@ -1,0 +1,25 @@
+<div *ngIf="student">
+    <h2>Student Detail</h2>
+    <h3>{{student.name}}</h3>
+    <span>{{student.age | currency}}</span>
+
+    
+    <!-- <label>New age</label> -->
+    <!-- <input #newAge />
+    <button (click)="changeAge(+newAge.value)">Change Age</button> -->
+
+    <form (ngSubmit)="changeAge()">
+        <label>New age</label>
+        <input placeholder="new price" name="age" [(ngModel)]="age">
+        <button type="submit"> Update Age</button>
+    </form>
+
+
+
+    <div [ngSwitch]="student.name|lowercase">
+        <p *ngSwitchCase="'henok'"> Husband </p>
+        <p *ngSwitchCase="'woinshet'">Wife</p>
+        <p *ngSwitchDefault>Relative</p>
+    </div>
+    <button (click)="select()">Select Now</button>
+</div>
